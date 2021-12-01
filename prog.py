@@ -54,6 +54,13 @@ def encrypt(password, fileExt):
 
 	encFileStream.close()
 	rawFileStream.close()
+
+	deleteRawFile = input("delete raw data file? (y/n): ")
+
+	# favor to preserve original data file
+	if deleteRawFile.lower() == 'y':
+		os.remove(rawFilePath)
+
 	sys.exit()
 
 
@@ -82,7 +89,7 @@ def decrypt(password):
 		try:
 			rawData = f.decrypt(encFileStream.read())
 
-			rawFilePath += rawData[:8].decode()
+			rawFilePath += rawData[:rawExtMaxLen].decode()
 			rawFilePath = rawFilePath[:rawFilePath.find('*')]
 
 			try:
@@ -93,7 +100,7 @@ def decrypt(password):
 				sys.exit()
 
 			with rawFileStream:
-				rawFileStream.write(rawData[8:])
+				rawFileStream.write(rawData[rawExtMaxLen:])
 
 		except:
 			# awlays treat exception as invalid password
