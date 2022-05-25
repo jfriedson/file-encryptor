@@ -1,5 +1,5 @@
 # File Encryptor
-Encrypt and decrypt text and binary files along with the file extension.
+Encrypt and decrypt text and binary files.  Hide the original file extension within the encrypted file.
 
 ## How to use
 install the cryptography 36.0.0 package from pip using `pip install cryptography`  
