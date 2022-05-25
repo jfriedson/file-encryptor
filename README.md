@@ -1,8 +1,5 @@
 # File Encryptor
-Encrypt and decrypt files containing sensitive data.
-
-## Origin
-This project came about when I needed to securely encrypt a file.
+Encrypt and decrypt text and binary files along with the file extension.
 
 ## How to use
 install the cryptography 36.0.0 package from pip using `pip install cryptography`  
